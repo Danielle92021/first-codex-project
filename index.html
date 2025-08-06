@@ -5,33 +5,42 @@
   <title>My First Codex Project</title>
   <style>
     body {
-      background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+      background: linear-gradient(135deg, #fdf1ff, #e0c3fc);
       font-family: 'Comic Sans MS', cursive, sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       height: 100vh;
       margin: 0;
-      flex-direction: column;
     }
 
     h1 {
       font-size: 2.5rem;
-      color: #4a148c;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: sparkle 3s ease-in-out infinite;
       text-align: center;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+
+    @keyframes sparkle {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
   </style>
 </head>
 <body>
   <h1>Welcome to my first Codex project! 🎉</h1>
 
-  <!-- 🎵 Add this music player just below your heading -->
   <audio autoplay loop controls>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 </body>
 </html>
+
 
 
