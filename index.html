@@ -34,7 +34,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* ✨ Sparkle Button */
     .sparkle-button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -46,6 +45,7 @@
       box-shadow: 0 0 10px rgba(255,255,255,0.7);
       cursor: pointer;
       animation: glow 2s infinite ease-in-out;
+      z-index: 2;
     }
 
     @keyframes glow {
@@ -54,9 +54,9 @@
       100% { box-shadow: 0 0 10px rgba(255,255,255,0.4); }
     }
 
-    /* 🍓 Spinning Strawberry */
     .disco-fruit {
       width: 100px;
+      height: auto;
       animation: spin 5s linear infinite;
       margin-top: 20px;
       z-index: 2;
@@ -67,24 +67,25 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* ✨ Floating Stars */
     .star {
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       background: white;
       border-radius: 50%;
-      opacity: 0.7;
+      opacity: 0.8;
+      top: 100vh;
       animation: floatStar 6s linear infinite;
+      z-index: 1;
     }
 
     @keyframes floatStar {
       0% {
-        transform: translateY(100vh) scale(0.5);
-        opacity: 0.7;
+        transform: translateY(0vh) scale(0.5);
+        opacity: 0.8;
       }
       100% {
-        transform: translateY(-10vh) scale(1);
+        transform: translateY(-110vh) scale(1);
         opacity: 0;
       }
     }
@@ -93,31 +94,29 @@
 <body>
   <h1>Welcome to my first Codex project! 🎉</h1>
 
-  <!-- ✨ Sparkle Button -->
   <button class="sparkle-button">Let’s Dance! 💃</button>
 
-  <!-- 🍓 Spinning Fruit -->
-  <img src="https://cdn.pixabay.com/photo/2017/01/31/21/23/strawberry-2021527_1280.png" alt="Spinning Strawberry" class="disco-fruit" />
+  <!-- 🍓 Fixed: Spinning Strawberry (uses safe image link) -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/PerfectStrawberry.jpg/320px-PerfectStrawberry.jpg"
+       alt="Spinning Strawberry"
+       class="disco-fruit" />
 
-  <!-- 🎶 Background Music -->
+  <!-- 🎶 Music Player -->
   <audio autoplay loop controls>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 
-  <!-- ✨ 12 Floating Stars -->
+  <!-- ✨ Floating Stars Script -->
   <script>
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 15; i++) {
       const star = document.createElement('div');
       star.className = 'star';
       star.style.left = Math.random() * 100 + 'vw';
       star.style.animationDuration = (4 + Math.random() * 4) + 's';
+      star.style.width = star.style.height = 6 + Math.random() * 10 + 'px';
       document.body.appendChild(star);
     }
   </script>
 </body>
 </html>
-
-
-
-
